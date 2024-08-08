@@ -18,8 +18,6 @@ class MovieNowPlayingDataSource implements DataSource {
         'https://api.themoviedb.org/3/movie/now_playing?api_key=$apiKey&language=pt-BR&page=1';
     final response = await httpFacade(method, endPoint, data: data);
 
-    // print("BATATAA ${response}");
-
     var dataMovieList = DataMovieNowPlayingListModel.fromJson({"data": response});
 
     final movies = dataMovieList.data

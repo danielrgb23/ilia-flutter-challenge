@@ -5,7 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:ilia_movies/apis/now_playing_movies/domain/usecases/movie_usecase.dart'
+import 'package:ilia_movies/apis/now_playing_movies/domain/usecases/movie_now_playing_usecase.dart'
     as _i2;
 import 'package:ilia_movies/models/movie_entity.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;

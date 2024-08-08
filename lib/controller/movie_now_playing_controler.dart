@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ilia_movies/apis/now_playing_movies/domain/usecases/movie_usecase.dart';
+import 'package:ilia_movies/apis/now_playing_movies/domain/usecases/movie_now_playing_usecase.dart';
 import 'package:ilia_movies/models/movie_entity.dart';
 
 class MovieNowPlayingControler extends ChangeNotifier {

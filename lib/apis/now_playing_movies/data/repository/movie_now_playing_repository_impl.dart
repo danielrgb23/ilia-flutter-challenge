@@ -3,10 +3,10 @@ import 'package:ilia_movies/apis/now_playing_movies/domain/repository/movie_now_
 import 'package:ilia_movies/models/movie_entity.dart';
 import 'package:ilia_movies/share/base/datasource/datasource.dart';
 
-class MovieRepositoryImpl implements MovieNowPlayingRepository {
+class MovieNowPlayingRepositoryImpl implements MovieNowPlayingRepository {
   final DataSource dataSource;
 
-  MovieRepositoryImpl(this.dataSource);
+  MovieNowPlayingRepositoryImpl(this.dataSource);
 
   @override
   Future<List<MovieEntity>> call() async {
