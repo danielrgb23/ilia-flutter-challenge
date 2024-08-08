@@ -4,7 +4,7 @@ import 'package:ilia_movies/apis/now_playing_movies/data/repository/movie_reposi
 import 'package:ilia_movies/apis/now_playing_movies/domain/repository/movie_repository.dart';
 import 'package:ilia_movies/apis/now_playing_movies/domain/usecases/movie_usecase.dart';
 import 'package:ilia_movies/controller/movie_now_playing_controler.dart';
-import 'package:ilia_movies/presentation/home_screen/bloc/movie_bloc.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/movie_now_playing/movie_now_playing_bloc.dart';
 import 'package:ilia_movies/share/boundaries/http_connection/http_facade.dart';
 
 class MovieNowPlayingInjector {
@@ -27,7 +27,7 @@ class MovieNowPlayingInjector {
           getIT<HttpFacade>(),
         ));
 
-    getIT.registerFactory<MovieBloc>(() => MovieBloc(
+    getIT.registerFactory<MovieNowPlayingBloc>(() => MovieNowPlayingBloc(
           movieUsecase: getIT<MovieUsecase>(),
         ));
   }

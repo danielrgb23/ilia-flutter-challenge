@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:ilia_movies/controller/movie_now_playing_controler.dart';
-import 'package:ilia_movies/presentation/home_screen/bloc/movie_bloc.dart';
-import 'package:ilia_movies/presentation/home_screen/bloc/movie_event.dart';
-import 'package:ilia_movies/presentation/home_screen/bloc/movie_state.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/movie_now_playing/movie_now_playing_bloc.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/movie_now_playing/movie_now_playing_event.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/movie_now_playing/movie_now_playing_state.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -27,10 +27,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<MovieBloc>()..add(FetchMovies()),
+      create: (_) => getIt<MovieNowPlayingBloc>()..add(FetchMovies()),
       child: Scaffold(
         appBar: AppBar(title: Text('Movies')),
-        body: BlocBuilder<MovieBloc, MovieState>(
+        body: BlocBuilder<MovieNowPlayingBloc, MovieNowPlayingState>(
           builder: (context, state) {
             if (state is MovieLoading) {
               return Center(child: CircularProgressIndicator());
