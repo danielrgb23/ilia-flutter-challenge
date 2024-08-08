@@ -5,4 +5,4 @@ abstract class MovieNowPlayingEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class FetchMovies extends MovieNowPlayingEvent {}
+class FetchMoviesNowPlaying extends MovieNowPlayingEvent {}

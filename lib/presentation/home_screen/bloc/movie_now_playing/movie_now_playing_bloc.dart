@@ -7,10 +7,10 @@ class MovieNowPlayingBloc extends Bloc<MovieNowPlayingEvent, MovieNowPlayingStat
   final MovieNowPlayingUsecase movieUsecase;
 
   MovieNowPlayingBloc({required this.movieUsecase}) : super(MovieInitial()) {
-    on<FetchMovies>(_onFetchMovies);
+    on<FetchMoviesNowPlaying>(_onFetchMovies);
   }
 
-  Future<void> _onFetchMovies(FetchMovies event, Emitter<MovieNowPlayingState> emit) async {
+  Future<void> _onFetchMovies(FetchMoviesNowPlaying event, Emitter<MovieNowPlayingState> emit) async {
     emit(MovieLoading());
     try {
       final movies = await movieUsecase();

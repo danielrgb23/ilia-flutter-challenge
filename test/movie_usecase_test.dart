@@ -49,7 +49,7 @@ void main() {
         when(mockMovieUsecase()).thenAnswer((_) async => movies);
         return movieBloc;
       },
-      act: (bloc) => bloc.add(FetchMovies()),
+      act: (bloc) => bloc.add(FetchMoviesNowPlaying()),
       expect: () => [MovieLoading(), MovieLoaded(movies: movies)],
     );
 
@@ -59,7 +59,7 @@ void main() {
         when(mockMovieUsecase()).thenThrow(Exception('Erro na API'));
         return movieBloc;
       },
-      act: (bloc) => bloc.add(FetchMovies()),
+      act: (bloc) => bloc.add(FetchMoviesNowPlaying()),
       expect: () =>
           [MovieLoading(), MovieError(message: 'Exception: Erro na API')],
     );
