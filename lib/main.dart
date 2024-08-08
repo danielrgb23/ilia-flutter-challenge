@@ -22,22 +22,21 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<MovieNowPlayingBloc>(
-          create: (context) => getIt<MovieNowPlayingBloc>()..add(FetchMoviesNowPlaying()),
+          create: (context) =>
+              getIt<MovieNowPlayingBloc>()..add(FetchMoviesNowPlaying()),
         ),
         BlocProvider<PopularMoviesBloc>(
-          create: (context) => getIt<PopularMoviesBloc>()..add(FetchPopularMovies()),
+          create: (context) =>
+              getIt<PopularMoviesBloc>()..add(FetchPopularMovies()),
         ),
-        // Adicione mais BlocProviders conforme necessário
       ],
       child: MaterialApp(
-      title: 'Ília Movies',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home:
-          HomeScreen(), // Uma tela inicial onde você pode navegar para as outras
-    ),
+          title: 'Ília Movies',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: HomeScreen()),
     );
   }
 }
