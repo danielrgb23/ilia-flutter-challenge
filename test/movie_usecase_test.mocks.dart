@@ -26,7 +26,7 @@ import 'package:mockito/mockito.dart' as _i1;
 /// A class which mocks [MovieUsecase].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockMovieUsecase extends _i1.Mock implements _i2.MovieUsecase {
+class MockMovieUsecase extends _i1.Mock implements _i2.MovieNowPlayingUsecase {
   MockMovieUsecase() {
     _i1.throwOnMissingStub(this);
   }

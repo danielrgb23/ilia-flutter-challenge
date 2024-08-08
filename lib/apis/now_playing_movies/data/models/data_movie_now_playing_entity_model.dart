@@ -1,8 +1,8 @@
 import 'package:ilia_movies/models/movie_entity.dart';
 import 'package:ilia_movies/share/base/model/model.dart';
 
-class DataMovieEntityModel extends MovieEntity implements Model {
-  DataMovieEntityModel(
+class DataMovieNowPlayingEntityModel extends MovieEntity implements Model {
+  DataMovieNowPlayingEntityModel(
     final bool adult,
     final String backdrop_path,
     final List<dynamic> genre_ids,
@@ -54,8 +54,8 @@ class DataMovieEntityModel extends MovieEntity implements Model {
   }
 
   @override
-  factory DataMovieEntityModel.fromJson(Map<String, dynamic> json) {
-    return DataMovieEntityModel(
+  factory DataMovieNowPlayingEntityModel.fromJson(Map<String, dynamic> json) {
+    return DataMovieNowPlayingEntityModel(
       json["adult"] ?? false,
       json["backdrop_path"] ?? '',
       json["genre_ids"] ?? [],
@@ -73,8 +73,8 @@ class DataMovieEntityModel extends MovieEntity implements Model {
     );
   }
 
-  factory DataMovieEntityModel.copy(MovieEntity movieEntity) {
-    return DataMovieEntityModel(
+  factory DataMovieNowPlayingEntityModel.copy(MovieEntity movieEntity) {
+    return DataMovieNowPlayingEntityModel(
         movieEntity.adult,
         movieEntity.backdrop_path,
         movieEntity.genre_ids,

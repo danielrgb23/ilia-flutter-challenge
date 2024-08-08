@@ -3,7 +3,7 @@ import 'package:ilia_movies/apis/now_playing_movies/domain/usecases/movie_usecas
 import 'package:ilia_movies/models/movie_entity.dart';
 
 class MovieNowPlayingControler extends ChangeNotifier {
-  final MovieUsecase movieUsecase;
+  final MovieNowPlayingUsecase movieUsecase;
 
   final movieListenable = ValueNotifier<List<MovieEntity>>([]);
   List<MovieEntity> _items = [];

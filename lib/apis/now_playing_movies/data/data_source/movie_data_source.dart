@@ -1,13 +1,13 @@
-import 'package:ilia_movies/apis/now_playing_movies/data/models/data_movie_list_model.dart';
+import 'package:ilia_movies/apis/now_playing_movies/data/models/data_movie_now_playing_list_model.dart';
 import 'package:ilia_movies/core/Constants/constants.dart';
 import 'package:ilia_movies/models/movie_entity.dart';
 import 'package:ilia_movies/share/base/datasource/datasource.dart';
 import 'package:ilia_movies/share/boundaries/http_connection/http_facade.dart';
 
-class MovieDataSource implements DataSource {
+class MovieNowPlayingDataSource implements DataSource {
   final HttpFacade httpFacade;
 
-  MovieDataSource(this.httpFacade);
+  MovieNowPlayingDataSource(this.httpFacade);
 
   @override
   Future<dynamic> call(
@@ -20,7 +20,7 @@ class MovieDataSource implements DataSource {
 
     // print("BATATAA ${response}");
 
-    var dataMovieList = DataMovieListModel.fromJson({"data": response});
+    var dataMovieList = DataMovieNowPlayingListModel.fromJson({"data": response});
 
     final movies = dataMovieList.data
         .map((data) => MovieEntity(

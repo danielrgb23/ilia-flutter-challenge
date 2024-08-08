@@ -10,7 +10,7 @@ import 'package:mockito/annotations.dart';
 
 import 'movie_usecase_test.mocks.dart';
 
-@GenerateMocks([MovieUsecase])
+@GenerateMocks([MovieNowPlayingUsecase])
 void main() {
   late MovieNowPlayingBloc movieBloc;
   late MockMovieUsecase mockMovieUsecase;

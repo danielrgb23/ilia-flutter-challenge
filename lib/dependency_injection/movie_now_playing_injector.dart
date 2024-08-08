@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:ilia_movies/apis/now_playing_movies/data/data_source/movie_data_source.dart';
-import 'package:ilia_movies/apis/now_playing_movies/data/repository/movie_repository_impl.dart';
-import 'package:ilia_movies/apis/now_playing_movies/domain/repository/movie_repository.dart';
+import 'package:ilia_movies/apis/now_playing_movies/data/repository/movie_now_playing_repository_impl.dart';
+import 'package:ilia_movies/apis/now_playing_movies/domain/repository/movie_now_playing_repository.dart';
 import 'package:ilia_movies/apis/now_playing_movies/domain/usecases/movie_usecase.dart';
 import 'package:ilia_movies/controller/movie_now_playing_controler.dart';
 import 'package:ilia_movies/presentation/home_screen/bloc/movie_now_playing/movie_now_playing_bloc.dart';
@@ -13,22 +13,22 @@ class MovieNowPlayingInjector {
   void call() {
     getIT.registerLazySingleton<MovieNowPlayingControler>(
         () => MovieNowPlayingControler(
-              getIT<MovieUsecase>(),
+              getIT<MovieNowPlayingUsecase>(),
             ));
     
     // Register factories
-    getIT.registerFactory<MovieUsecase>(() => MovieUsecaseImpl(
-          getIT<MovieRepository>(),
+    getIT.registerFactory<MovieNowPlayingUsecase>(() => MovieUsecaseImpl(
+          getIT<MovieNowPlayingRepository>(),
         ));
-    getIT.registerFactory<MovieRepository>(() => MovieRepositoryImpl(
-          getIT<MovieDataSource>(),
+    getIT.registerFactory<MovieNowPlayingRepository>(() => MovieRepositoryImpl(
+          getIT<MovieNowPlayingDataSource>(),
         ));
-    getIT.registerFactory<MovieDataSource>(() => MovieDataSource(
+    getIT.registerFactory<MovieNowPlayingDataSource>(() => MovieNowPlayingDataSource(
           getIT<HttpFacade>(),
         ));
 
     getIT.registerFactory<MovieNowPlayingBloc>(() => MovieNowPlayingBloc(
-          movieUsecase: getIT<MovieUsecase>(),
+          movieUsecase: getIT<MovieNowPlayingUsecase>(),
         ));
   }
 }

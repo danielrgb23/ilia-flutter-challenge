@@ -4,7 +4,7 @@ import 'movie_now_playing_event.dart';
 import 'movie_now_playing_state.dart';
 
 class MovieNowPlayingBloc extends Bloc<MovieNowPlayingEvent, MovieNowPlayingState> {
-  final MovieUsecase movieUsecase;
+  final MovieNowPlayingUsecase movieUsecase;
 
   MovieNowPlayingBloc({required this.movieUsecase}) : super(MovieInitial()) {
     on<FetchMovies>(_onFetchMovies);
