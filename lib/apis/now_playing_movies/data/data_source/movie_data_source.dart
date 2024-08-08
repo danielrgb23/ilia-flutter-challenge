@@ -15,7 +15,7 @@ class MovieNowPlayingDataSource implements DataSource {
     const method = HttpMethod.get;
 
     String endPoint =
-        'https://api.themoviedb.org/3/movie/now_playing?api_key=$apiKey&language=en-US&page=1';
+        'https://api.themoviedb.org/3/movie/now_playing?api_key=$apiKey&language=pt-BR&page=1';
     final response = await httpFacade(method, endPoint, data: data);
 
     // print("BATATAA ${response}");
