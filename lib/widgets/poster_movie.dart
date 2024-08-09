@@ -22,7 +22,7 @@ class PosterMovie extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  InkWell(
-      onTap: (){},
+      onTap: onPressed,
       child: Card(
         elevation: 5,
         child: Stack(
