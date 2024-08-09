@@ -5,7 +5,7 @@ import 'package:ilia_movies/models/movie_entity.dart';
 class TopRatedMoviesControler extends ChangeNotifier {
   final TopRatedMoviesUsecase topRatedMoviesUsecase;
 
-  final popularMoviesListenable = ValueNotifier<List<MovieEntity>>([]);
+  final topRatedMoviesListenable = ValueNotifier<List<MovieEntity>>([]);
   List<MovieEntity> _items = [];
 
   TopRatedMoviesControler(this.topRatedMoviesUsecase);
@@ -32,8 +32,8 @@ class TopRatedMoviesControler extends ChangeNotifier {
               data.vote_count))
           .toList();
 
-      popularMoviesListenable.value = useCase;
-      popularMoviesListenable.notifyListeners();
+      topRatedMoviesListenable.value = useCase;
+      topRatedMoviesListenable.notifyListeners();
     } catch (error) {
       Exception("Error");
     }
