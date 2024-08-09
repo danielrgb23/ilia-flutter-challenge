@@ -51,11 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.only(right: 24.0),
           child: IconButton(
             iconSize: 40,
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return DetailsScreen();
-              }));
-            },
+            onPressed: () {},
             icon: const Icon(Icons.search),
           ),
         ),
@@ -106,12 +102,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.only(top: 28.0),
                   child: ImageCarousel(
                     movies: state.movies.sublist(0, 9),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return DetailsScreen();
-                      }));
-                    },
                   ),
                 );
               } else if (state is UpcomingMovieError) {
@@ -156,7 +146,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                 images:
                                     'https://image.tmdb.org/t/p/w1280${state.movies[index].poster_path}',
                                 title: state.movies[index].title,
-                                onPressed: () {});
+                                onPressed: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return DetailsScreen(
+                                      movieId:
+                                          state.movies[index].id.toString(),
+                                      movieName: state.movies[index].title,
+                                    );
+                                  }));
+                                });
                           }),
                     ));
               } else if (state is MovieError) {
@@ -201,7 +200,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                 images:
                                     'https://image.tmdb.org/t/p/w1280${state.movies[index].poster_path}',
                                 title: state.movies[index].title,
-                                onPressed: () {});
+                                onPressed: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return DetailsScreen(
+                                      movieId:
+                                          state.movies[index].id.toString(),
+                                      movieName: state.movies[index].title,
+                                    );
+                                  }));
+                                });
                           }),
                     ));
               } else if (state is PopularMovieError) {
@@ -246,7 +254,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                 images:
                                     'https://image.tmdb.org/t/p/w1280${state.movies[index].poster_path}',
                                 title: state.movies[index].title,
-                                onPressed: () {});
+                                onPressed: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return DetailsScreen(
+                                      movieId:
+                                          state.movies[index].id.toString(),
+                                      movieName: state.movies[index].title,
+                                    );
+                                  }));
+                                });
                           }),
                     ));
               } else if (state is TopRatedMovieError) {
@@ -258,7 +275,9 @@ class _HomeScreenState extends State<HomeScreen> {
               }
             },
           ),
-          SizedBox(height: 40,)
+          SizedBox(
+            height: 40,
+          )
         ],
       ),
     );

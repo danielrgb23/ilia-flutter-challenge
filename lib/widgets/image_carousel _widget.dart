@@ -1,12 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:ilia_movies/models/movie_entity.dart';
+import 'package:ilia_movies/presentation/details_screen/details_screen.dart';
 
 class ImageCarousel extends StatefulWidget {
   final List<MovieEntity> movies; 
-  final Function() onPressed;
 
-  ImageCarousel({required this.movies, required this.onPressed});
+  ImageCarousel({required this.movies,});
 
   @override
   _ImageCarouselState createState() => _ImageCarouselState();
@@ -42,7 +42,12 @@ class _ImageCarouselState extends State<ImageCarousel> {
             return Stack(
               children: [
                 InkWell(
-                  onTap: widget.onPressed,
+                  onTap: (){
+                    Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return DetailsScreen(movieId: movie.id.toString(),movieName: movie.title,);
+                      }));
+                  },
                   focusColor: Colors.white,
                   child: Image.network(
                     imageUrl,

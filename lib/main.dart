@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:ilia_movies/dependency_injection/injector.dart';
+import 'package:ilia_movies/presentation/details_screen/details_screen.dart';
 import 'package:ilia_movies/presentation/home_screen/bloc/movie_now_playing/movie_now_playing_bloc.dart';
 import 'package:ilia_movies/presentation/home_screen/bloc/movie_now_playing/movie_now_playing_event.dart';
 import 'package:ilia_movies/presentation/home_screen/bloc/popular_movies/popular_movies_bloc.dart';
