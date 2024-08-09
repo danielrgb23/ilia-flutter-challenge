@@ -1,6 +1,5 @@
 import 'package:ilia_movies/apis/top_rated_movies/data/models/data_top_rated_movies_entity_model.dart';
 import 'package:ilia_movies/models/movie_list_entity.dart';
-import 'package:ilia_movies/apis/popular_movies/data/models/data_popular_movies_entity_model.dart';
 import 'package:ilia_movies/models/movie_entity.dart';
 import 'package:ilia_movies/share/base/model/model.dart';
 
@@ -23,7 +22,7 @@ class DataTopRatedMoviesListModel extends MovieListEntity implements Model {
     final dataList = data.cast<Map<String, dynamic>>();
 
     return DataTopRatedMoviesListModel(
-      dataList.map((dataJson) => DataPopularMoviesEntityModel.fromJson(dataJson)).toList(),
+      dataList.map((dataJson) => DataTopRatedMoviesEntityModel.fromJson(dataJson)).toList(),
     );
   }
 
