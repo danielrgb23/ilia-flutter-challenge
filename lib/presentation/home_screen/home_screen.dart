@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
-import 'package:ilia_movies/presentation/home_screen/bloc/movie_now_playing/movie_now_playing_bloc.dart';
-import 'package:ilia_movies/presentation/home_screen/bloc/movie_now_playing/movie_now_playing_event.dart';
-import 'package:ilia_movies/presentation/home_screen/bloc/movie_now_playing/movie_now_playing_state.dart';
 import 'package:ilia_movies/presentation/home_screen/bloc/popular_movies/popular_movies_bloc.dart';
-import 'package:ilia_movies/presentation/home_screen/bloc/popular_movies/popular_movies_event.dart';
 import 'package:ilia_movies/presentation/home_screen/bloc/popular_movies/popular_movies_state.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/top_rated_movies/top_rated_movies_bloc.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/top_rated_movies/top_rated_movies_state.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -27,11 +24,11 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Movies')),
-      body: BlocBuilder<PopularMoviesBloc, PopularMoviesState>(
+      body: BlocBuilder<TopRatedMoviesBloc, TopRatedMoviesState>(
         builder: (context, state) {
-          if (state is PopularMovieLoading) {
+          if (state is TopRatedMovieLoading) {
             return const Center(child: CircularProgressIndicator());
-          } else if (state is PopularMovieLoaded) {
+          } else if (state is TopRatedMovieLoaded) {
             return ListView.builder(
               itemCount: state.movies.length,
               itemBuilder: (context, index) {
@@ -45,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
             );
-          } else if (state is PopularMovieError) {
+          } else if (state is TopRatedMovieError) {
             return Center(child: Text(state.message));
           } else {
             return Center(

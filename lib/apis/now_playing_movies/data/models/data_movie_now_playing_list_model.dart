@@ -1,5 +1,5 @@
 import 'package:ilia_movies/apis/now_playing_movies/data/models/data_movie_now_playing_entity_model.dart';
-import 'package:ilia_movies/apis/now_playing_movies/domain/entities/movie_now_playing_list_entity.dart';
+import 'package:ilia_movies/models/movie_list_entity.dart';
 import 'package:ilia_movies/models/movie_entity.dart';
 import 'package:ilia_movies/share/base/model/model.dart';
 
