@@ -16,6 +16,7 @@ Juntamente com o mockito e outros pacotes para testar essas funcionalidades.
 - Clean Architeture
 - Design Patterns
 - Mockito
+- [Figma](https://www.figma.com/design/dTdywJ89zxeolkhRgPmq3O/ilia_movies?node-id=2-4&t=r6Qj29CXVztZHyxm-1)
 
 
 
