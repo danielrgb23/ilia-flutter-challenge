@@ -1,5 +1,4 @@
-import 'package:ilia_movies/apis/top_rated_movies/data/models/data_top_rated_movies_list_model.dart';
-import 'package:ilia_movies/apis/upcoming_movies/data/models/data_top_rated_movies_list_model.dart';
+import 'package:ilia_movies/apis/upcoming_movies/data/models/data_upcoming_movies_list_model.dart';
 import 'package:ilia_movies/core/Constants/constants.dart';
 import 'package:ilia_movies/models/movie_entity.dart';
 import 'package:ilia_movies/share/base/datasource/datasource.dart';
@@ -16,7 +15,7 @@ class UpcomingMoviesDataSource implements DataSource {
     const method = HttpMethod.get;
 
     String endPoint =
-        'https://api.themoviedb.org/3/movie/top_rated?api_key=$apiKey&language=pt-BR&page=1';
+        'https://api.themoviedb.org/3/movie/upcoming?api_key=$apiKey&language=pt-BR&page=1';
     final response = await httpFacade(method, endPoint, data: data);
 
     var dataMovieList = DataUpcomingMoviesListModel.fromJson({"data": response});

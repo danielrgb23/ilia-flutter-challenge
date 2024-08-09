@@ -8,6 +8,8 @@ import 'package:ilia_movies/presentation/home_screen/bloc/popular_movies/popular
 import 'package:ilia_movies/presentation/home_screen/bloc/popular_movies/popular_movies_event.dart';
 import 'package:ilia_movies/presentation/home_screen/bloc/top_rated_movies/top_rated_movies_bloc.dart';
 import 'package:ilia_movies/presentation/home_screen/bloc/top_rated_movies/top_rated_movies_event.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/upcoming_movies/upcoming_movies_bloc.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/upcoming_movies/upcoming_movies_event.dart';
 import 'package:ilia_movies/presentation/home_screen/home_screen.dart';
 
 void main() async {
@@ -34,6 +36,10 @@ class MyApp extends StatelessWidget {
         BlocProvider<TopRatedMoviesBloc>(
           create: (context) =>
               getIt<TopRatedMoviesBloc>()..add(FetchTopRatedMovies()),
+        ),
+        BlocProvider<UpcomingMoviesBloc>(
+          create: (context) =>
+              getIt<UpcomingMoviesBloc>()..add(FetchUpcomingMovies()),
         ),
       ],
       child: MaterialApp(
