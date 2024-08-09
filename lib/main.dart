@@ -1,38 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
+import 'package:ilia_movies/dependency_injection/injector.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/movie_now_playing/movie_now_playing_bloc.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/movie_now_playing/movie_now_playing_event.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/popular_movies/popular_movies_bloc.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/popular_movies/popular_movies_event.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/top_rated_movies/top_rated_movies_bloc.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/top_rated_movies/top_rated_movies_event.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/upcoming_movies/upcoming_movies_bloc.dart';
+import 'package:ilia_movies/presentation/home_screen/bloc/upcoming_movies/upcoming_movies_event.dart';
 import 'package:ilia_movies/presentation/home_screen/home_screen.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  final injector = Injector();
+  injector.call();
+
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+  final getIt = GetIt.instance;
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: HomeScreen(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<MovieNowPlayingBloc>(
+          create: (context) =>
+              getIt<MovieNowPlayingBloc>()..add(FetchMoviesNowPlaying()),
+        ),
+        BlocProvider<PopularMoviesBloc>(
+          create: (context) =>
+              getIt<PopularMoviesBloc>()..add(FetchPopularMovies()),
+        ),
+        BlocProvider<TopRatedMoviesBloc>(
+          create: (context) =>
+              getIt<TopRatedMoviesBloc>()..add(FetchTopRatedMovies()),
+        ),
+        BlocProvider<UpcomingMoviesBloc>(
+          create: (context) =>
+              getIt<UpcomingMoviesBloc>()..add(FetchUpcomingMovies()),
+        ),
+      ],
+      child: MaterialApp(
+          title: 'Ília Movies',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: HomeScreen()),
     );
   }
 }
