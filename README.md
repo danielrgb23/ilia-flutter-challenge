@@ -1,43 +1,73 @@
-# ília - Code Challenge Flutter
-**English**
-##### Before we start ⚠️
-**Please create a fork from this repository**
+# Ilia Movies
 
-## The Challenge:
-Using the API from [TheMovieDB](https://developers.themoviedb.org/3/getting-started/introduction), You must create an app that shows the featured movies in the Theaters, in a list.
+Feito no intuito de apresentar minhas habilidades tecnicas para a ilia digital.
 
-When the user touches in a movie, the app must show in a detail screen detailed information about it. You can choose which information should be shown.
+Neste app segui os padroes de architetura limpa e design paterns para o deixar didatico e de facil entendimento.
 
-## Extra features:
+Seguindo os padroes de mercado para o uso das tecnologias, escolhi criar esse app com funcionalidades de injeção de dependencia e para gerenciar estados o bloc.
 
-- In the main list of the movies, would be nice if the app could load more movies, as the scroll reaches the bottom section of the current page.
-- In the detail screen, would be nice to have an option to play the movie trailer.
-- In the main screen, would be nice to have the possibility to search by the movie title.
+Juntamente com o mockito e outros pacotes para testar essas funcionalidades.
 
-In the end, a pull request must be created in the Github repo. As soon as you finish, please let us know.
+## Tecnologias utilizadas
 
-We are available to answer any questions.
-
-***
-
-**Português**
-##### Antes de começar ⚠️
-**Por favor, crie um fork desse repositório**
-
-## The Challenge:
-Utilizando a API do [TheMovieDB](https://developers.themoviedb.org/3/getting-started/introduction), Criar um app que mostre os filmes que estão em cartaz nos cinemas, em forma de lista.
-
-Ao tocar em um filme, mostrar em uma nova tela, informações detalhadas sobre ele, você pode escolher quais informações acha interessante mostrar.
-
-## Extras:
-
-- Na tela de listagem dos filmes, ir carregando as próximas páginas ao dar scroll até o final da página atual
-- Na tela de detalhe, criar uma opçāo para tocar o vídeo do trailer do filme.
-- Na tela inicial, possibilitar a busca por título do filme
+- Flutter v3.22.2
+- Dio
+- Flutter_Bloc
+- Clean Architeture
+- Design Patterns
+- Mockito
 
 
-No final, um pull request deve ser criado no repositório do Github. Assim que terminar, por favor nos avise.
 
-Estamos à disposição, para tirar dúvidas.
+## Variáveis de Ambiente
 
-Happy coding! 🤓
+Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente na pasta lib/core/constants/constants.dart
+
+- `API_KEY`
+- `ANOTHER_API_KEY`
+
+Pode as conseguir no site: https://developer.themoviedb.org/
+
+
+## Funcionalidades
+
+- Requisições de api
+- Exibição de dados e gerencia de dados
+- Stream de video
+
+
+## Rodando localmente
+
+Clone o projeto
+
+```bash
+  git clone https://github.com/danielrgb23/ilia-flutter-challenge.git
+```
+
+Entre no diretório do projeto
+
+```bash
+  cd ilia-flutter-challenge
+```
+
+Instale as dependências
+
+```bash
+  flutter pub dev
+```
+
+Inicie o servidor
+
+```bash
+  flutter run
+```
+
+
+## Autores
+
+- [@Danielrgb23](https://www.github.com/danielrgb23)
+
+
+## Demonstração
+
+- [Download da APK V1](https://drive.google.com/file/d/1_1SHSrZ1ZNdAQuY0XQkElNQnlyg-K0w8/view?usp=drive_link)
