@@ -1,3 +1,3 @@
-const String apiKey = "7a3ff32848014204823ee41d12b7b883";
-const String header = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YTNmZjMyODQ4MDE0MjA0ODIzZWU0MWQxMmI3Yjg4MyIsIm5iZiI6MTcyMzA1NDE4Ny40MTE1NDEsInN1YiI6IjY2YjNiNzg2MzUwMjUwZDE2MWNjYzBkZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ZFhGMr2tRmXqvL7k5a4RfGqoaMBRl6wAxbaqSnfFY8c";
+const String apiKey = "SUA API KEY AQUI";
+const String header = "SEU HEADER DA API AQUI";
 const String urlBaseImages = "https://image.tmdb.org/t/p/w1280/";
